@@ -3,6 +3,8 @@
 tsconfig.*.json
 tsconfig.tsbuildinfo
 rollup.config.js
+rollup.config.cjs
+rollup.config.mjs
 output/**
 .github/**
 
