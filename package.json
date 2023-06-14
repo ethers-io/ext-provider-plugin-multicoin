@@ -1,0 +1,44 @@
+{
+  "name": "@ethers-ext/provider-plugin-multicoin",
+  "version": "6.0.0-beta.1",
+  "description": "An Ethers extension to add full multi-coin support to ENS resolution.",
+  "dependencies": {
+    "@ensdomains/address-encoder": "^0.2.21",
+    "ethers": "^6.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib.esm/index.js",
+      "default": "./lib.commonjs/index.js"
+    }
+  },
+  "scripts": {
+    "auto-build": "npm run build -- -w",
+    "build": "tsc --build ./tsconfig.esm.json",
+    "build-all": "npm run build && npm run build-commonjs",
+    "build-clean": "npm run clean && npm run build-all",
+    "build-commonjs": "tsc --build ./tsconfig.commonjs.json",
+    "clean": "rm -rf lib.commonjs lib.esm && cp -r misc/basedirs/* .",
+    "test": "exit 1"
+  },
+  "main": "./lib.commonjs/index.js",
+  "module": "./lib.esm/index.js",
+  "publishConfig": {
+    "tag": "beta"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ethers-io/ext-providers-plugin-multicoin.git"
+  },
+  "bugs": {
+    "url": "http://github.com/ethers-io/ext-providers-plugin-multicoin/issues",
+    "email": "github@ricmoo.com"
+  },
+  "author": "Richard Moore <me@ricmoo.com>",
+  "license": "MIT"
+}
